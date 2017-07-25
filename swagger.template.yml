@@ -1,0 +1,17 @@
+swagger: '2.0'
+info:
+  title: {{title}}
+  description: ''
+  version: '1'
+schemes:
+  - {{scheme}}
+host: {{host}}
+basePath: {{basePath}}
+produces:
+  - application/json
+parameters:
+  {{parameters}}
+paths:
+  {{paths}}
+definitions:
+  {{definitions}}
