@@ -1,0 +1,16 @@
+get:
+  tags: ['Comments']
+  parameters:
+    - name: item_id
+      in: path
+      required: true
+      type: string
+    - $ref: '#/parameters/offset'
+    - $ref: '#/parameters/limit'
+  responses:
+    200:
+      description: ''
+      schema:
+        type: array
+        items:
+          $ref: '#/definitions/Comment'

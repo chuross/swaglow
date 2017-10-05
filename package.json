@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "init": "node bin/init.js -o test"
+    "init": "node bin/init.js -o sample",
+    "build": "node bin/build.js -i sample"
   },
   "bin": {
-    "init": "bin/init.js"
+    "init": "bin/init.js",
+    "build": "bin/build.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "commander": "^2.11.0"
+    "commander": "^2.11.0",
+    "indent-string": "^3.2.0"
   }
 }

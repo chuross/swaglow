@@ -10,8 +10,8 @@ basePath: {{basePath}}
 produces:
   - application/json
 parameters:
-  {{parameters}}
+{{parameters}}
 paths:
-  {{paths}}
+{{paths}}
 definitions:
-  {{definitions}}
+{{definitions}}

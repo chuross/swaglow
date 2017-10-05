@@ -3,18 +3,14 @@
 const fs = require('fs');
 const program = require('commander');
 const package = require('lib/package');
+const configs = require('lib/configs');
 
 program
     .version(package.json.version)
     .option('-o, --output [path]', 'target output directory path')
     .parse(process.argv);
 
-const swaglowConfig = {
-    "title": "your project title",
-    "baseUrl": "ex) https://example.com/api/v1"
-};
-
-const data = JSON.stringify(swaglowConfig, null, '\t');
+const data = JSON.stringify(configs.swaglow, null, '\t');
 const outputDir = program.output || process.cwd();
 const parametersDir = `${outputDir}/parameters`;
 const pathsDir = `${outputDir}/paths`;
