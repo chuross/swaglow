@@ -1,5 +1,0 @@
-name: limit
-in: query
-required: false
-type: integer
-default: 20

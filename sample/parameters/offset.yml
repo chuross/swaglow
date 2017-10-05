@@ -1,5 +1,0 @@
-name: offset
-in: query
-required: false
-type: integer
-default: 0
