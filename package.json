@@ -1,6 +1,6 @@
 {
   "name": "swaglow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "bin/cmd.js",
   "bin": {
