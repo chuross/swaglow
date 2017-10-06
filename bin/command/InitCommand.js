@@ -1,7 +1,7 @@
 const fs = require('fs');
 const program = require('commander');
-const package = require('lib/package');
-const configs = require('lib/configs');
+const package = require('../../lib/package');
+const configs = require('../../lib/configs');
 
 class InitCommand {
 

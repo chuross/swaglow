@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const package = require('lib/package');
-const utils = require('lib/utils');
-const builder = require('lib/builder');
+const package = require('../../lib/package');
+const utils = require('../../lib/utils');
+const builder = require('../../lib/builder');
 
 class BuildCommand {
 

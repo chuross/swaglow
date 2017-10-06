@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const program = require('commander');
-const package = require('lib/package');
+const package = require('../lib/package');
 const InitCommand = require('./command/InitCommand');
 const BuildCommand = require('./command/BuildCommand');
 
