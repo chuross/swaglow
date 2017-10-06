@@ -19,7 +19,7 @@ class BuildCommand {
         const swaglowJson = require(swaglowJsonPath);
         console.log(`build swagger.yml file from ${inputPath}`);
         
-        const baseUrlGroups = /^(https?):\/\/([\w\.].+?)\/([\w\.\/\-].+)/.exec(swaglowJson.baseUrl);
+        const baseUrlGroups = /^(https?):\/\/([\w\.].+?)(\/[\w\.\/\-].+)/.exec(swaglowJson.baseUrl);
         if (utils.isNull(baseUrlGroups)) {
             console.log(`invalid baseUrl format: input=${swaglowJson.baseUrl} expected=(http|https)://(host)/(path)`);
             return;
@@ -42,9 +42,9 @@ class BuildCommand {
             { key: '{{scheme}}', value: scheme },
             { key: '{{host}}', value: host },
             { key: '{{basePath}}', value: basePath },
-            { key: '{{paths}}', value: paths },
-            { key: '{{definitions}}', value: definitions },
-            { key: '{{parameters}}', value: parameters }
+            { key: '{{paths}}', value: this.buildSection('paths', paths) },
+            { key: '{{definitions}}', value: this.buildSection('definitions', definitions) },
+            { key: '{{parameters}}', value: this.buildSection('parameters', parameters) }
         ];
         
         const swaggerYaml = placeHolders.reduce((current, placeHolder) => {
@@ -62,6 +62,11 @@ class BuildCommand {
         
         fs.writeFileSync(filePath, swaggerYaml);
         console.log(`build successful! ${filePath}`);
+    }
+
+    buildSection(sectionName, value) {
+        if (utils.isNull(value) || value.length == 0) return '';
+        return `${sectionName}:\n${value}`;
     }
 }
 
