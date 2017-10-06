@@ -1,5 +1,5 @@
 {
-  "name": "swagger-yaml-cli-framework",
+  "name": "swaglow",
   "version": "1.0.0",
   "description": "",
   "main": "bin/cmd.js",
