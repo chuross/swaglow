@@ -57,8 +57,8 @@ root
 }
 ```
 
-#### path example
-##### paths/users/(user_id)/index.yml
+### path example
+#### paths/users/(user_id)/index.yml
 ```
 get:
   tags: ['Users']
@@ -75,8 +75,8 @@ get:
         $ref: '#/definitions/User'
 ```
 
-#### definition example
-##### definitions/User.yml
+### definition example
+#### definitions/User.yml
 ```
 type: object
 properties:
@@ -84,8 +84,8 @@ properties:
     type: string
 ```
 
-#### parameter example
-##### parameters/offset.yml
+### parameter example
+#### parameters/offset.yml
 ```
 name: limit
 in: query
@@ -94,7 +94,7 @@ type: integer
 default: 20
 ```
 
-## generated yaml
+### generated yaml
 ```
 swagger: '2.0'
 info:
