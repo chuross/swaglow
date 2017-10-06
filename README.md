@@ -38,7 +38,7 @@ root
     - endpoint.yml
 ```
 
-#### Generated Yaml
+#### generated yaml
 ```
 ...
 paths:
@@ -65,7 +65,7 @@ root
   - User.yml
 ```
 
-#### Generated Yaml
+#### generated yaml
 ```
 ...
 definitions:
