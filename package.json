@@ -3,13 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "init": "node bin/init.js -o sample",
-    "build": "node bin/build.js -i sample"
-  },
   "bin": {
-    "init": "bin/init.js",
-    "build": "bin/build.js"
+    "swaglow": "bin/cmd.js"
   },
   "author": "",
   "license": "ISC",
