@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/swaglow.svg)](https://badge.fury.io/js/swaglow)
+
 # Swaglow
 
 ## Install
