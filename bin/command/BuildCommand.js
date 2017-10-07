@@ -59,6 +59,8 @@ class BuildCommand {
         const outputDir = options.output || process.cwd();
         const outputPath = path.resolve(process.cwd(), outputDir);
         const filePath = `${outputPath}/swagger.yml`;
+
+        if (!fs.existsSync(outputPath)) fs.mkdirSync(outputPath);
         
         fs.writeFileSync(filePath, swaggerYaml);
         console.log(`build successful! ${filePath}`);
