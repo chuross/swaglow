@@ -16,14 +16,21 @@ class InitCommand {
         if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir)
         
         console.log("create directories...");
-        if (!fs.existsSync(parametersDir)) fs.mkdirSync(parametersDir);
-        if (!fs.existsSync(pathsDir)) fs.mkdirSync(pathsDir);
-        if (!fs.existsSync(definitionsDir)) fs.mkdirSync(definitionsDir);
-        
+        this.createDirectoryIfNeeded(parametersDir);
+        this.createDirectoryIfNeeded(pathsDir);
+        this.createDirectoryIfNeeded(definitionsDir);
+
         console.log("create swaglow.json...");
         if (!fs.existsSync(filePath)) fs.writeFileSync(filePath, data);
         
         console.log("success!");
+    }
+
+    createDirectoryIfNeeded(basePath) {
+        if (fs.existsSync(basePath)) return;
+
+        fs.mkdirSync(basePath);
+        fs.writeFileSync(`${basePath}/.gitkeep`, '');
     }
 }
 
