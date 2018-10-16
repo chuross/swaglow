@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const package = require('../../lib/package');
+const indentString = require('indent-string');
 const utils = require('../../lib/utils');
 const builder = require('../../lib/builder');
 
@@ -25,25 +25,25 @@ class BuildCommand {
             return;
         }
         
-        const definitionsDir = `${inputPath}/definitions`;
+        const schemasDir = `${inputPath}/schemas`;
         const parametersDir = `${inputPath}/parameters`;
         const pathsDir = `${inputPath}/paths`;
         
         const title = swaglowJson.title;
-        const [scheme, host, basePath] = baseUrlGroups.slice(1);
+        const version = swaglowJson.version;
+        const baseUrl = swaglowJson.baseUrl;
         const paths = builder.buildPaths(pathsDir, pathsDir) || '';
-        const definitions = builder.buildObjects(definitionsDir, definitionsDir) || '';
+        const schemas = builder.buildObjects(schemasDir, schemasDir) || '';
         const parameters = builder.buildObjects(parametersDir, parametersDir) || '';
         
         const swaggerTemplate = fs.readFileSync(path.resolve(__dirname, '../../swagger.template.yml'));
-        
+
         const placeHolders = [
             { key: '{{title}}', value: title } ,
-            { key: '{{scheme}}', value: scheme },
-            { key: '{{host}}', value: host },
-            { key: '{{basePath}}', value: basePath },
+            { key: '{{version}}', value: version },
+            { key: '{{baseUrl}}', value: baseUrl },
             { key: '{{paths}}', value: this.buildSection('paths', paths) },
-            { key: '{{definitions}}', value: this.buildSection('definitions', definitions) },
+            { key: '{{schemas}}', value: this.buildSection('schemas', indentString(schemas, 2)) },
             { key: '{{parameters}}', value: this.buildSection('parameters', parameters) }
         ];
         

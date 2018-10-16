@@ -1,14 +1,10 @@
-swagger: '2.0'
+openapi: '3.0.1'
 info:
   title: {{title}}
-  description: ''
-  version: '1'
-schemes:
-  - {{scheme}}
-host: {{host}}
-basePath: {{basePath}}
-produces:
-  - application/json
+  version: {{version}}
+servers:
+  - {{baseUrl}}
 {{parameters}}
 {{paths}}
-{{definitions}}
+components:
+  {{schemas}}
