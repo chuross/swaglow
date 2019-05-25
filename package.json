@@ -23,6 +23,6 @@
     "indent-string": "^3.2.0"
   },
   "devDependencies": {
-    "swagger-tools": "^0.10.1"
+    "swagger-tools": "^0.10.4"
   }
 }
