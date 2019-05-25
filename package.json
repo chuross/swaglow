@@ -6,6 +6,9 @@
   "bin": {
     "swaglow": "bin/cmd.js"
   },
+  "scripts": {
+    "publish:patch": "npm version patch && npm publish"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/chuross/swaglow"
