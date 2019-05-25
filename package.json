@@ -7,6 +7,7 @@
     "swaglow": "bin/cmd.js"
   },
   "scripts": {
+    "publish:minor": "npm version minor && npm publish",
     "publish:patch": "npm version patch && npm publish"
   },
   "repository": {
