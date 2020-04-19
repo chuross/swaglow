@@ -1,0 +1,17 @@
+/users:
+  get:
+    tags: ["Users"]
+    operationId: getUsers
+    parameters:
+      - name: q
+        in: query
+        type: string
+      - $ref: "#/parameters/offset"
+      - $ref: "#/parameters/limit"
+    responses:
+      200:
+        description: ""
+        schema:
+          type: array
+          items:
+            $ref: "#/definitions/User"

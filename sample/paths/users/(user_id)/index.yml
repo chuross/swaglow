@@ -1,0 +1,13 @@
+get:
+  tags: ["Users"]
+  operationId: getUserById
+  parameters:
+    - name: user_id
+      in: path
+      type: string
+      required: true
+  responses:
+    200:
+      description: ""
+      schema:
+        $ref: "#/definitions/User"
